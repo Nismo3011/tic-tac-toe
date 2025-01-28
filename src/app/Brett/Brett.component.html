@@ -1,0 +1,18 @@
+<h1>Aktueller Spieler: {{ spieler }} </h1>
+
+<button nbButton outline status="danger" (click)="neuesSpiel()">Neue Runde</button>
+
+
+<h2 *ngIf="sieger">
+    Spieler {{ sieger }} hat gewonnen!
+</h2>
+
+
+<main>
+    <app-quadrat
+        *ngFor="let val of quadrate; let i = index" 
+        [value]="val"
+        (click)="makeMove(i)"> 
+
+    </app-quadrat>
+</main>
